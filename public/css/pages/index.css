@@ -19,7 +19,7 @@ main header {
             rgba(0, 0, 0, 0.5) 75%,
             var(--backgroundColorPrimary)
         ),
-        url("../../assets/header-bg.jpg");
+        url("public/assets/header-bg.jpg");
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
     place-items: center;
