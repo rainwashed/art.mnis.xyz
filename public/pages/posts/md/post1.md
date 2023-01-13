@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.gyazo.com/3ed66964566df74346556da22abddb31.jpg" width="400" style="border-radius: 20px;">
+    <img src="https://i.ibb.co/2N1MQyF/3ed66964566df74346556da22abddb31-min-1.jpg" width="400" style="border-radius: 20px;">
     <img src="">
 </p>
 
