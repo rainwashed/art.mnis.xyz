@@ -1,5 +1,9 @@
+@use "../components/styles/navbar.style.scss" as navbar;
+
+$safetyPadding: 20px;
 main {
   margin-left: 2%;
-  width: 85vw;
+  margin-right: $safetyPadding;
+  width: calc(100vw - navbar.$buttonSize - $safetyPadding);
   height: 100vh;
 }

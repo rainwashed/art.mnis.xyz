@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles/navbar.style.scss";
 
 interface _navRouteEntry {
