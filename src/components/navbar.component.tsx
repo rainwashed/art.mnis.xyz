@@ -1,5 +1,5 @@
 import { useState } from "react";
-import style from "./styles/navbar.module.scss";
+import "./styles/navbar.style.scss";
 
 interface _navRouteEntry {
   iconName: string;
@@ -10,7 +10,7 @@ interface _navRouteEntry {
 let navRoutes: _navRouteEntry[] = [
   {
     iconName: "fa-solid fa-house",
-    href: "#",
+    href: "/",
     routeName: "Home",
   },
   {
@@ -29,11 +29,16 @@ export default function NavbarComponent() {
   let [openedNav, setOpenedNav] = useState(false);
 
   return (
-    <nav className={style.root}>
+    <nav className={`root_navbar ${openedNav ? "state_active" : ""}`}>
       <button onClick={(e) => setOpenedNav(!openedNav)}>
         <i className="fa-solid fa-bars-sort"></i>
       </button>
       <div>
+        <span>
+          <p>
+            <i>art</i>.mnis.xyz
+          </p>
+        </span>
         <ul>
           {navRoutes.map((meta: _navRouteEntry, index: number) => (
             <li key={index}>
