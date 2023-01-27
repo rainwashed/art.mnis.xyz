@@ -26,7 +26,8 @@ $cardPadding: 5%;
 
   div {
     padding: $cardPadding;
-    width: calc(100% - (2 * $cardPadding));
+    // width: calc(100% - (2 * $cardPadding));
+    width: auto;
     height: 100%;
     flex-flow: column nowrap;
   }

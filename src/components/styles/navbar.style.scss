@@ -2,16 +2,17 @@ $buttonSize: 30px;
 $linkSize: 50px;
 $linkPadding: 5%;
 $linkIconSize: 30px;
-$fontSize: 100%;
+$fontSize: 1em;
 $navbarAnimation: cubic-bezier(0, 0.55, 0.45, 1); // easeOutBack
+$navbarWidth: 30vw;
 
 nav.root_navbar {
   display: flex;
   position: fixed;
   padding-top: 20px;
-  left: calc(-15vw + $buttonSize);
+  left: calc(-1 * ($navbarWidth) + $buttonSize);
   top: 0;
-  width: 15vw;
+  width: $navbarWidth;
   height: 100vh;
   flex-direction: row-reverse;
   background-color: rgba(0, 0, 0, 0.4);
@@ -110,5 +111,12 @@ nav.root_navbar {
   &.state_active {
     left: 0;
     // background-color: blue !important;
+  }
+}
+
+@media (orientation: portrait) {
+  nav.root_navbar {
+    width: 100vw;
+    left: calc(-100vw + $buttonSize);
   }
 }

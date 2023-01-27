@@ -27,7 +27,7 @@ function HomeRoute() {
 
   return (
     <div className={style.root}>
-      <h1>This is the home route</h1>
+      {/* <h1>This is the home route</h1> */}
       <div className={style.image}>
         <div>
           <h1>Hi! I'm Andrew.</h1>
@@ -97,7 +97,9 @@ function HomeRoute() {
           ))}
         </> */}
       </div>
-      <footer className={style.footer}></footer>
+      <footer className={style.footer}>
+        <p>legal blah blah blah</p>
+      </footer>
     </div>
   );
 }

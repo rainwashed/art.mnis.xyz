@@ -50,11 +50,12 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 90vw;
-  height: fit-content;
-  flex-flow: row nowrap;
-  //   justify-content: flex-start;
+  width: auto;
+  max-width: 80vw;
+  height: auto;
+  flex-flow: row wrap;
   justify-content: center;
+  // justify-content: center;
   align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
@@ -62,7 +63,16 @@
   border-right: 1px solid white;
 
   div {
-    margin-inline: 20px;
+    margin-inline: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  .track {
+    border-left-color: transparent;
+    border-right-color: transparent;
   }
 }
 
@@ -72,7 +82,11 @@
 }
 
 .footer {
+  position: relative;
   margin-top: 30vh;
-  width: 100%;
+  padding-left: 2%;
+  padding-top: 2%;
+  width: auto;
   height: 150px;
+  background-color: #080808;
 }
