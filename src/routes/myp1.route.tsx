@@ -8,6 +8,16 @@ import {
   useState,
 } from "react";
 
+function checkUID(manifest: ManifestInterface | undefined, uid: string) {
+  let r: PostInterface | undefined = undefined;
+
+  manifest?.posts.forEach((post, index) => {
+    if (post.uid === uid) r = post;
+  });
+
+  return r;
+}
+
 function PostArea() {
   const { data, status }: UseQueryResult<ManifestInterface, unknown> = useQuery(
     "manifest",
@@ -22,6 +32,30 @@ function PostArea() {
       cacheTime: 1 * 24 * 60 * 60 * 1000,
     }
   );
+  const [openedPost, setOpenedPost] = useState(false);
+  const [iframeSrc, setIframeSrc] = useState("");
+
+  function handleHashChange(e: HashChangeEvent) {
+    const hash: string = window.location.hash.slice(1);
+    console.log("new hash=", hash);
+    console.log("new hash check=", checkUID(data, hash.toLowerCase()));
+  }
+
+  function handlePreload() {
+    //if there is a post hash in the url; load the post
+    const hash: string = window.location.hash.slice(1);
+    console.log("loaded hash=", hash);
+    console.log("load hash check=", checkUID(data, hash.toLowerCase()));
+  }
+
+  const onWindowMount = () => {
+    handlePreload();
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => window.removeEventListener("hashchange", () => {});
+  };
+
+  useEffect(onWindowMount, []);
 
   if (status === "error")
     return (
@@ -41,54 +75,19 @@ function PostArea() {
   return (
     <div className="post_grid">
       <p>{JSON.stringify(data)}</p>
-    </div>
-  );
-}
-
-function checkUID(manifest: ManifestInterface, uid: string) {
-  let r: PostInterface | undefined = undefined;
-
-  manifest.posts.forEach((post, index) => {
-    if (post.uid === uid) r = post;
-  });
-
-  return r;
-}
-
-function MYP1Route() {
-  const [openedPost, setOpenedPost] = useState(false);
-  const [iframeSrc, setIframeSrc] = useState("");
-
-  function handleHashChange(e: HashChangeEvent) {
-    const hash: string = window.location.hash.slice(1);
-    console.log("new hash=", hash);
-    // console.log("new hash check=", checkUID(hash.toLowerCase()));
-  }
-
-  function handlePreload() {
-    //if there is a post hash in the url; load the post
-    const hash: string = window.location.hash.slice(1);
-    console.log("loaded hash=", hash);
-    // console.log("load hash check=", checkUID(hash.toLowerCase()));
-  }
-
-  const onWindowMount = () => {
-    handlePreload();
-    window.addEventListener("hashchange", handleHashChange);
-
-    return () => window.removeEventListener("hashchange", () => {});
-  };
-
-  useEffect(onWindowMount, []);
-
-  return (
-    <div>
-      <h1>This is the MYP1 Route</h1>
-      <PostArea />
       <iframe
         src={iframeSrc}
         className={`iframe_view ${iframeSrc === "" ? "active-loaded" : ""}`}
       />
+    </div>
+  );
+}
+
+function MYP1Route() {
+  return (
+    <div>
+      <h1>This is the MYP1 Route</h1>
+      <PostArea />
     </div>
   );
 }
