@@ -8,6 +8,8 @@ import {
   useRef,
   useState,
 } from "react";
+import IFrameView from "./iframe.view";
+import "./styles/myp1.module.scss";
 
 function PostArea() {
   const [openedPost, setOpenedPost] = useState(false);
@@ -24,7 +26,6 @@ function PostArea() {
       cacheTime: 1 * 24 * 60 * 60 * 1000,
     }
   );
-  const iframeRef = useRef(null);
 
   const postsData: PostInterface | PostInterface[] | undefined = data?.posts;
 
@@ -44,10 +45,9 @@ function PostArea() {
           <div key={i}>{JSON.stringify(val)}</div>
         ))}
       </div>
-      <iframe
-        ref={iframeRef}
-        className={`iframe_view ${openedPost ? "view_open" : ""}`}
-      />
+      <div className={`mock_iframe_view ${openedPost ? "view_open" : ""}`}>
+        <IFrameView fileName="post1.md" />
+      </div>
     </div>
   );
 }
