@@ -9,10 +9,13 @@ import {
   useState,
 } from "react";
 import IFrameView from "./iframe.view";
-import "./styles/myp1.module.scss";
+import "./styles/myp1.style.scss";
 
 function PostArea() {
-  const [openedPost, setOpenedPost] = useState(false);
+  const [openedPost, setOpenedPost] = useState(true);
+  const [postUrl, setPostUrl] = useState("");
+  const [datHook, setDatHook] = useState({});
+
   const { data, status }: UseQueryResult<ManifestInterface, unknown> = useQuery(
     "manifest",
     async () => {
@@ -27,8 +30,6 @@ function PostArea() {
     }
   );
 
-  const postsData: PostInterface | PostInterface[] | undefined = data?.posts;
-
   if (status === "error")
     return (
       <p>
@@ -38,15 +39,38 @@ function PostArea() {
     );
   if (status === "loading") return <p>Attempting...</p>;
 
+  const postsData: PostInterface | PostInterface[] | undefined = data?.posts;
+
+  if (JSON.stringify(datHook) === "{}") {
+    // setDatHook(data as {});
+    console.log("datHook is empty");
+    console.log(data);
+  }
+
   return (
     <div className="post_grid">
       <div>
         {postsData?.map((val, i) => (
-          <div key={i}>{JSON.stringify(val)}</div>
+          <div
+            key={i}
+            style={
+              {
+                "--background": `url("${val.thumbnail}")`,
+              } as React.CSSProperties
+            }
+          >
+            <a href={`#${val.uid}`}>
+              <h1>{val.title}</h1>
+              <p>{val.description}</p>
+            </a>
+          </div>
         ))}
       </div>
       <div className={`mock_iframe_view ${openedPost ? "view_open" : ""}`}>
-        <IFrameView fileName="post1.md" />
+        <button onClick={() => setOpenedPost(false)}>
+          <i className="fa-solid fa-xmark"></i>
+        </button>
+        <IFrameView fileName={postUrl} />
       </div>
     </div>
   );
