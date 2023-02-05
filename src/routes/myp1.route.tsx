@@ -1,20 +1,73 @@
 import { UseQueryResult, useQuery } from "react-query";
 import { ManifestInterface, PostInterface } from "../ts/interfaces";
 import {
+  CSSProperties,
   Dispatch,
   ReactNode,
   SetStateAction,
   useEffect,
-  useRef,
   useState,
 } from "react";
 import IFrameView from "./iframe.view";
 import "./styles/myp1.style.scss";
 
+function HashListener(props: {
+  children?: ReactNode[];
+  data: ManifestInterface;
+  assignPost: Dispatch<SetStateAction<string>>;
+}) {
+  function checkUidExists(uid: string) {
+    let r: boolean = false; // r = return value
+
+    props.data.posts.forEach((post) => {
+      if (post.uid === uid) r = true;
+    });
+
+    return r;
+  }
+
+  function searchByUid(uid: string): PostInterface | undefined {
+    let r: PostInterface | undefined;
+
+    props.data.posts.forEach((post) => {
+      if (post.uid === uid) r = post;
+    });
+
+    return r;
+  }
+
+  function onHashChange() {
+    let hash: string = window.location.hash.slice(1);
+    if (checkUidExists(hash) === false) {
+      props.assignPost("");
+      return;
+    }
+    console.log("window eventhashchange found.");
+
+    let obj: PostInterface = searchByUid(hash) as PostInterface;
+    props.assignPost(obj.src);
+  }
+
+  useEffect(() => {
+    let hash: string = window.location.hash.slice(1);
+    if (checkUidExists(hash)) {
+      console.log("window load hash change found.");
+
+      let obj: PostInterface = searchByUid(hash) as PostInterface;
+      props.assignPost(obj.src);
+    } else {
+      props.assignPost("");
+    }
+
+    window.addEventListener("hashchange", onHashChange);
+    return window.removeEventListener("hashchange", () => {});
+  }, []);
+
+  return <></>;
+}
+
 function PostArea() {
-  const [openedPost, setOpenedPost] = useState(true);
   const [postUrl, setPostUrl] = useState("");
-  const [datHook, setDatHook] = useState({});
 
   const { data, status }: UseQueryResult<ManifestInterface, unknown> = useQuery(
     "manifest",
@@ -37,40 +90,41 @@ function PostArea() {
         file.
       </p>
     );
+
   if (status === "loading") return <p>Attempting...</p>;
 
-  const postsData: PostInterface | PostInterface[] | undefined = data?.posts;
-
-  if (JSON.stringify(datHook) === "{}") {
-    // setDatHook(data as {});
-    console.log("datHook is empty");
-    console.log(data);
-  }
-
   return (
-    <div className="post_grid">
-      <div>
-        {postsData?.map((val, i) => (
-          <div
-            key={i}
-            style={
-              {
-                "--background": `url("${val.thumbnail}")`,
-              } as React.CSSProperties
-            }
-          >
-            <a href={`#${val.uid}`}>
-              <h1>{val.title}</h1>
-              <p>{val.description}</p>
-            </a>
-          </div>
-        ))}
+    <div>
+      <div className="post_grid">
+        {data?.posts.map((post, index) => {
+          return (
+            <article
+              key={index}
+              style={
+                { "--background": `url("${post.thumbnail}")` } as CSSProperties
+              }
+            >
+              <a href={`#${post.uid}`}></a>
+              <div>
+                <h1>{post.title}</h1>
+                <p>{post.description}</p>
+              </div>
+            </article>
+          );
+        })}
       </div>
-      <div className={`mock_iframe_view ${openedPost ? "view_open" : ""}`}>
-        <button onClick={() => setOpenedPost(false)}>
+      <HashListener data={data as ManifestInterface} assignPost={setPostUrl} />
+      <div className={`mock_iframe ${postUrl === "" ? "" : "iframe_active"}`}>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.hash = "";
+            setPostUrl("");
+          }}
+        >
           <i className="fa-solid fa-xmark"></i>
         </button>
-        <IFrameView fileName={postUrl} />
+        {postUrl !== "" ? <IFrameView fileName={postUrl} /> : <></>}
       </div>
     </div>
   );

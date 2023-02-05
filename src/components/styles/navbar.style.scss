@@ -18,7 +18,7 @@ nav.root_navbar {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(30px);
   transition: left 300ms $navbarAnimation;
-  z-index: 100;
+  z-index: 5;
 
   button {
     width: $buttonSize;
