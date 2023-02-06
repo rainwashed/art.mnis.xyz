@@ -1,0 +1,23 @@
+{
+  "signature": "evelina",
+  "posts": [
+    {
+      "title": "Art Journal Cover",
+      "description": "Creating our own Zentagle designs on our art journal cover.",
+      "timestamp": 1663976458451,
+      "thumbnail": "https://i.ibb.co/2N1MQyF/3ed66964566df74346556da22abddb31-min-1.jpg",
+      "src": "art-journal-cover.md",
+      "uid": "art-journal-cover"
+    },
+    {
+      "title": "Charcoal Studies Still Life",
+      "description": "A still life illustration using charcoal.",
+      "timestamp": 1673570923469,
+      "thumbnail": "https://i.ibb.co/MNLh25P/6-ACAA84-D-4-DA4-4560-8-E1-F-77-E77302-AD68-min.jpg",
+      "src": "charcoal-still-life.md",
+      "uid": "charcoal-still-life"
+    }
+  ],
+  "metadata": { "postCount": 2 },
+  "motd": "Evelina, you are so beautiful."
+}
