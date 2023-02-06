@@ -14,7 +14,7 @@ function App() {
       <div>
         <NavbarComponent />
         <main>
-          <BrowserRouter>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Switch>
               <Route exact path="/">
                 <HomeRoute />
