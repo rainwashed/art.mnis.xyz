@@ -24,8 +24,16 @@
       "thumbnail": "https://lh6.googleusercontent.com/2ENv2iivWPjaKpBpHBUlRy9teEU6Wxnp-OahatzAhNXbnfBiYGbP7-xkuqcBt1L9EiQ=w2400",
       "src": "ceramic-box.md",
       "uid": "ceramic-box"
+    },
+    {
+      "title": "Mt. Everest Watercolor",
+      "description": "Creating a realistic (ish) landscape with watercolor",
+      "timestamp": 1683221244129,
+      "thumbnail": "https://drive.google.com/uc?id=1cb96tdKfoAsn_yfGGE2fcF83ECcp6QEh",
+      "src": "./watercolor-final.md",
+      "uid": "mt_everest-watercolor"
     }
   ],
-  "metadata": { "postCount": 3 },
+  "metadata": { "postCount": 4 },
   "motd": "Evelina, you are so beautiful."
 }

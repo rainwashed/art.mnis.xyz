@@ -1,11 +1,15 @@
 <p align="center">
-    <img src="" />
+    <img src="https://drive.google.com/uc?id=1cb96tdKfoAsn_yfGGE2fcF83ECcp6QEh" width="1000">
 </p>
 
 - Title: Mt Everest
 - Subject Matter: Form and shape
 - Medium: Watercolor paints
 - Project Goals: Understanding the usage and techniques of watercolor
+
+## Reference Image
+
+<img src="https://drive.google.com/uc?id=1eUO2xL6qJTTTp4jZV42HPhMwCBPwcAe_" width="1000"/>
 
 ## Criteria A: Investigating
 
@@ -24,3 +28,8 @@ My inspiration for this artwork came from the mountain painting that ancient Chi
 I believed I used this artwork for self-expression and catharsis. This artwork symbolizes an excerpt of my life's journey. It shows how I faced struggle and hardship yet triumphed. It showed that, although the land is hard, the sky is beautiful (a metaphorical statement of how the surrounding world is more beautiful than the present situation). Both self-expression and catharsis can be related and both, in the context of my artwork, display the same thing. It is the theme of struggle and glory -- that is what is beautiful about mountains, a symbolism of antonyms. This is the reflection of myself.
 
 ## Progress Photos
+
+<img src="https://drive.google.com/uc?id=1fs95vFerlOPVQBW5HntgTmmisRl-kF0v" width="1000">
+<img src="https://drive.google.com/uc?id=1PrOY37ayWqPTefGpBB166lCyVDsmaYAJ" width="1000">
+<img src="https://drive.google.com/uc?id=1MpOpUI374VtmH3QnmDH5ESEarZ3qpEtf" width="1000">
+<img src="https://drive.google.com/uc?id=1p5YKqbgMUyoGUwtcz2LHqibgX6qPyG_9" width="1000">
