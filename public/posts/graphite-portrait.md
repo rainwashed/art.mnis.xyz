@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://drive.google.com/uc?id=1cb96tdKfoAsn_yfGGE2fcF83ECcp6QEh" width="1000">
+    <img src="https://drive.google.com/uc?id=1x5x64tmXaybU31RuK05FundeHocJ16qv" width="1000">
 </p>
 
 - Title: Me, myself, and I
@@ -9,7 +9,7 @@
 
 ## Reference Image
 
-<img src="https://drive.google.com/uc?id=1eUO2xL6qJTTTp4jZV42HPhMwCBPwcAe_" width="1000"/>
+<img src="https://drive.google.com/uc?id=1OABnSlOVJRpOiKuTpJsd_oWKD9m83KDo" width="1000">
 
 ## Criteria A: Investigating
 
@@ -26,10 +26,6 @@ The inspiration for my artwork can't be traced to a single image or person. I wo
 ## Criteria D: Evaluating
 
 I believed I used this artwork for self-expression and catharsis. The artwork's focal subject is myself, and the background being the random noise represents the noise around me and within my own mind. It both represents me as a person with my surroundings and internal thought and represents my neutral monotone figure and facial expression. It also represents the noisy state of my mind, with my mind jumping from thought-to-thought, worry-to-worry, etc. and this artwork could be seen as a vent of those frustrations.
-
-## Reference Photo
-
-<img src="https://drive.google.com/uc?id=1OABnSlOVJRpOiKuTpJsd_oWKD9m83KDo" width="1000">
 
 ## Progress Photos
 
