@@ -1,0 +1,53 @@
+.focus-grid {
+  padding-top: 2%;
+  padding-inline: 10%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: auto;
+
+  > div {
+    margin: 10px;
+    flex: 0 0 calc(33.33% - 20px); // 33.33% = 1/3 (so 3 elements per row) and 10px represents gap
+    aspect-ratio: 1;
+  }
+}
+
+.focus-grid-item {
+  position: relative;
+
+  div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--img);
+    background-size: cover;
+    background-position: center;
+    // object-fit: cover;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      content: "";
+    }
+  }
+
+  p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    font-size: 2.5rem;
+    z-index: 1;
+  }
+}
+
+.artwork-selection {
+  display: flex;
+}

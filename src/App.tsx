@@ -5,6 +5,7 @@ import NotFoundRoute from "./routes/404-not-found.route";
 import "./styles/app.scss";
 import MYP1Route from "./routes/myp1.route";
 import { QueryClient, QueryClientProvider } from "react-query";
+import FinalExhibit from "./routes/final-exhibit.route";
 
 const queryClient: QueryClient = new QueryClient();
 
@@ -21,6 +22,9 @@ function App() {
               </Route>
               <Route path="/myp1">
                 <MYP1Route />
+              </Route>
+              <Route path="/final-exhibit">
+                <FinalExhibit />
               </Route>
               <Route path="*">
                 {/* 404 page */}

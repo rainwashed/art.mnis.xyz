@@ -23,6 +23,11 @@ let navRoutes: _navRouteEntry[] = [
     href: "/photography",
     routeName: "Personal Photography",
   },
+  {
+    iconName: "fa-solid fa-something",
+    href: "/final-exhibit",
+    routeName: "Final Exhibit (2023)",
+  },
 ];
 
 export default function NavbarComponent() {
@@ -31,7 +36,7 @@ export default function NavbarComponent() {
   return (
     <nav className={`root_navbar ${openedNav ? "state_active" : ""}`}>
       <button onClick={(e) => setOpenedNav(!openedNav)}>
-        <i className="fa-solid fa-bars-sort"></i>
+        <i className="fa-solid fa-bars"></i>
       </button>
       <div>
         <span>
