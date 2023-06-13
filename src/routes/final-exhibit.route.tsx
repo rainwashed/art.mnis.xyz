@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import IslamPhoto from "../assets/final/islam.jpg";
 import EgyptPhoto from "../assets/final/egypt.jpg";
 import GreecePhoto from "../assets/final/greece.jpg";
@@ -15,7 +15,7 @@ import GaneshaPhoto from "../assets/final/artwork/seated-ganesha.jpg";
 import style from "./styles/final-exhibit.module.scss";
 
 function ArtworkSection(props: {
-  children?: ReactNode;
+  children?: any;
   artworkTitle: string;
   location: string;
   period: string;
@@ -32,13 +32,26 @@ function ArtworkSection(props: {
   principle: string | string[];
   func: string;
 }) {
+  let [page, setPage] = useState(0);
+
+  const minusPage = () => {};
+  const forwardPage = () => {};
+
   return (
-    <div className={style["artwork-selection"]}>
-      <div>
+    <div className={style["image-section"]}>
+      <div className={style["image-slideshow"]}>
         {/* image selection */}
-        {props.children}
+        <div>
+          <button onClick={minusPage}>
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
+          <button onClick={forwardPage}>
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+        <div>{props.children}</div>
       </div>
-      <div>
+      <div className={style["text-section"]}>
         <h4>{props.artworkTitle}</h4>
         <ul>
           <li title="Geographic Location">
