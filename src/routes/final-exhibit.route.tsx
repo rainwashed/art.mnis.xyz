@@ -140,6 +140,36 @@ function FinalExhibit() {
       </div>
 
       <div>
+        <h1>Cultural Rationale</h1>
+        <p>
+          The idea behind my art show is the connection of different arts’
+          across cultures and time periods to the common element of stone(s).
+          Stones, which include rock, granite, quartz, etc. have been used in
+          many arts for many purposes. Stone is a versatile medium that can be
+          used for both aesthetic and application purposes. That is what
+          interests me. I decided to pick my art pieces across five different
+          civilizations at differing time periods. The five civilizations I
+          decided to pick are: Egypt, Indian, Islamic, Greece, and Rome. I
+          decided these civilizations as they were all located in differing
+          locations and their peak of arts were in all different time periods,
+          which I will use to display the changing and similar uses for stones
+          across art.
+        </p>
+
+        <h1>Description</h1>
+        <p>
+          I believe that the best method of presenting my exhibition would be in
+          a granite or quartz room that is dimly lit and has most of the light
+          focused on the artwork. Stones have a unique quality when light is
+          focused upon it. Rock has the reflection that is not eye-brightening
+          nor too dim, rather, light perfectly lights rock, especially within a
+          dark environment. Regardless, it has an aesthetic that I enjoy – I
+          enjoy both the dark and the light, especially how they interact with
+          each other and bring emphasis and disinterest to certain things.
+        </p>
+      </div>
+
+      <div>
         <h1>Civilizations of Focus</h1>
         <div className={style["focus-grid"]}>
           <CivilizationCard
