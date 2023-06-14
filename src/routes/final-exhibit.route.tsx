@@ -13,7 +13,9 @@ import MarbleSide from "../assets/final/artwork/marble-cinerary-side.jpg";
 import Marble34 from "../assets/final/artwork/marble-cinerary-34ths.jpg";
 import GaneshaPhoto from "../assets/final/artwork/seated-ganesha.jpg";
 import OpeningSound from "../assets/final/opening.mp3";
+import WorksCitedMd from "../assets/final/works-cited.md";
 import style from "./styles/final-exhibit.module.scss";
+import { marked } from "marked";
 import { motion } from "framer-motion";
 
 function ArtworkSection(props: {
@@ -34,6 +36,7 @@ function ArtworkSection(props: {
   principle: string | string[];
   func: string;
   desc: string;
+  citation: string;
 }) {
   let [page, setPage] = useState(0);
 
@@ -162,6 +165,12 @@ function ArtworkSection(props: {
                 ? props.principle
                 : props.principle.join(", ")}
             </p>
+            <p>Image Source:</p>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: marked.parse(props.citation),
+              }}
+            ></p>
           </div>
         </div>
       </div>
@@ -210,7 +219,7 @@ function FinalExhibit() {
             ease: [0, 0.55, 0.45, 1],
           }}
         >
-          <h1>Art of The Ages</h1>
+          <h1>Stone Room</h1>
           <h3>An exhibit composed by Andrew Li</h3>
         </motion.animate>
       </div>
@@ -268,7 +277,7 @@ function FinalExhibit() {
         }}
       >
         <div className={style["fs-center"]}>
-          <h1>Cultural Rationale</h1>
+          <h1>Curatorial Rationale</h1>
           <p>
             The idea behind my art show is the connection of different arts’
             across cultures and time periods to the common element of stone(s).
@@ -359,6 +368,7 @@ function FinalExhibit() {
           principle={"pattern"}
           func="The tablet provides historical context based on the cursive on its inscriptions. The tablet has a religious use, having an inscription from the Qu'ran, making it affiliated with Islam. It also serves as an aesthetic formation of Islamic scripture. However, the main function of this artwork is its religious use and connection."
           desc="A tablet of stone with engravings of calligraphic script through the form of an architectural niche. The scripture is a geometric kufic inscriptions that include the profession of faith (known as the Shahada) and passages from the Qur'an. The middle framing band are the name and titles of Shaikh Mahmud ibn Sada Muhammad, a leader of a religious brotherhood."
+          citation={`"Tombstone in the Form of an Architectural Niche." *The MET*, www.metmuseum.org/art/collection/search/449028.`}
         >
           <img src={TombstonePhoto} />
         </ArtworkSection>
@@ -379,6 +389,7 @@ function FinalExhibit() {
           principle={["emphasis", "proportion"]}
           func="The statue is significant in the sense that it depicts a non-royal, which was non-traditional. Historically, statues only depicted royals. The statue seems to be a gift of sorts because there is no 'shrine like' attributes within this statue. Also, considering the rarity of a non-royal statue, its logcial to assume that it would be a local gift that would not be shared with others, in fear that it violates all traditional dedication of these forms of arts."
           desc="It is a statue that depicts a kneeling man holding a text inscribed towards the sun. There is an inscription on the back of the statuette that identifies it as a man named 'Bay' who worked as a scribe during the rule of Seti I."
+          citation={`"Stelophorous Statue of Bay." *The MET*, www.metmuseum.org/art/collection/search/554769.`}
         >
           <img src={StelophorousFrontPhoto} />
           <img src={StelophorousBackPhoto} />
@@ -400,6 +411,7 @@ function FinalExhibit() {
           principle={["unity"]}
           func="The function of this piece of art is unclear. However, given the amount of precise effort put into the carving of the stone, it can be assumed that the significance of this artwork was high. It is described as a coffin, though it does not follow the size of what a real coffin would have been. Therefore, it can be believed that the function of this artwork is to represent a real coffin/death, having an emotional connection and significance to the members of the person that had died."
           desc="It is a box with inset engravings of horned animals in low relief and the Great Goddess or her priestess. It contains cutouts at its base as well as is supported with four legs. The form of the box is very geometrically rectangular, and there is a clear attention to detail on the symmetry between each face of the rectangular prism."
+          citation={`"Limestone coffin model." *The MET*, www.metmuseum.org/art/collection/search/244043.`}
         >
           <img src={LimestoneCoffinPhoto} />
         </ArtworkSection>
@@ -420,6 +432,7 @@ function FinalExhibit() {
           principle={["variety"]}
           func="The function of this artwork seems to have been a form of a tribute or dedication to the one who had died (which would have had their name written on the front). Due to it being found in a tomb, it can be assumed that this urn represented a tribute of this person's life, especially considering the 'war theme'. It can be assumed that these urn's reflect the individual that had died -- making it significant to the individual and his/hers character."
           desc="The principle of the theme of this artwork is war. There are many trophies, piles of weapons, and armor that cover the sides of the box. The faces are of high-quality, suggesting that the work was a commission of some kind. The front, where inscriptions of the name of the urn would be, is missing. The urn was excavated from a tomb near Anagni, southeast of Rome. There are many other urns similar to this one, all being a part of Roman funerary art."
+          citation={`"Marble cinerary urn." *The MET*, www.metmuseum.org/art/collection/search/257610.`}
         >
           <img src={MarbleFront} />
           <img src={MarbleSide} />
@@ -441,10 +454,19 @@ function FinalExhibit() {
           element={["form"]}
           principle={["emphasis", "balance"]}
           func="The small size of the sculpture makes it personal to someone. It seems it was a personal shrine to whoever followed Ganesha, making it have a religious significance to Hinduism and Hindus. Therefore, this artwork served the purpose as a religious shrine and a connection to Hinduism, making it significant to particularly Hindus."
-          desc="The stone is a dark black/brown colored with a figure of Ganesha, a deity in the Hindu pantheon who is the Supreme God in the Ganapatya sect. The artwork is small, being only half a foot tall and one third a foot wide. The god, Ganesha, is atop stepped pedestal on top a lotus throne, wearing a tripartite crown, which are all attributes of other images that were created in Kashmir. Kashmir was an early region for worship of Shiva."
+          desc="The stone is a dark black/brown colored with a figure of Ganesha, a deity in the Hindu pantheon who is the remover of obstacles. He is the son of Shiva Parvati. He is often prayed to before major changes in life. The artwork is small, being only half a foot tall and one third a foot wide. The god, Ganesha, is atop stepped pedestal on top a lotus throne, wearing a tripartite crown, which are all attributes of other images that were created in Kashmir. Kashmir was an early region for worship of Shiva."
+          citation={`"Seated Ganesha." *The MET*, www.metmuseum.org/art/collection/search/38404.`}
         >
           <img src={GaneshaPhoto} />
         </ArtworkSection>
+      </div>
+      <div>
+        <h1>Works Cited</h1>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: marked.parse(WorksCitedMd),
+          }}
+        ></p>
       </div>
       <div className={style["footer"]}>
         <ul>
