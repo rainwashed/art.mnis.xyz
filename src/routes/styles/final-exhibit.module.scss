@@ -1,3 +1,32 @@
+.root {
+  padding: 2%;
+  overflow-x: hidden;
+}
+
+.fs-center {
+  padding: 5%;
+  display: flex;
+  width: calc(100vw - 7%); // 7% comes from .root padding (2%) + & padding (5%)
+  height: 100vh;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    margin-bottom: 2%;
+    font-size: 5vmax;
+  }
+
+  h3 {
+    font-size: 2vmax;
+  }
+
+  p {
+    margin-bottom: 2%;
+    font-size: 1vmax;
+  }
+}
+
 .focus-grid {
   padding-top: 2%;
   padding-inline: 10%;
@@ -48,25 +77,32 @@
   }
 }
 
-$imageWidth: 500px;
+$imageWidth: 30vw;
 $sectionSpacingMargin: 200px;
 $imageSlideshowBackgroundColor: #2d3436;
 
 .image-section {
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 5%;
   display: flex;
   width: 100%;
   height: calc($imageWidth + $sectionSpacingMargin);
   flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
 }
 
 .text-section {
+  margin-left: 5%;
+
   h4 {
     font-size: 2.75vmax;
   }
 
   ul {
+    margin-bottom: 3.5%;
     padding-top: 10px;
     padding-bottom: 10px;
     display: flex;
@@ -82,6 +118,10 @@ $imageSlideshowBackgroundColor: #2d3436;
         margin-right: 5px;
       }
     }
+  }
+
+  div h3 {
+    margin-top: 1.5%;
   }
 }
 
@@ -153,6 +193,21 @@ $imageSlideshowBackgroundColor: #2d3436;
       width: 100%;
       height: auto;
       transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.footer {
+  margin-top: 100vh;
+  width: 100%;
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    p {
+      span {
+        margin-inline: 5px;
+      }
     }
   }
 }
